@@ -1,0 +1,1867 @@
+{
+  "game": "genshin",
+  "pools": {
+    "character-event": {
+      "gachaTypes": ["301", "400"],
+      "inCensus": true,
+      "base5": {
+        "value": 0.006,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020328/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "consolidated5": {
+        "value": 0.016,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020328/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "hardPity5": {
+        "value": 90,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020328/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "base4": {
+        "value": 0.051,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020328/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "guarantee4Every": {
+        "value": 10,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020328/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "featuredRate": {
+        "value": 0.5,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020328/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/79a292d76f0cf33b9e30babec9fac01c1860d45d/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "catchUp": {
+        "value": "capturing-radiance",
+        "source": {
+          "url": "https://genshin.hoyoverse.com/en/news/detail/125274",
+          "archive": "https://web.archive.org/web/20261010020455/https://genshin.hoyoverse.com/en/news/detail/125274",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "guaranteeAfterLoss": true,
+      "source": {
+        "url": "https://uigf.org/en/standards/uigf.html",
+        "archive": "https://web.archive.org/web/20261010020255/https://uigf.org/en/standards/uigf.html",
+        "retrieved": "2026-10-10"
+      }
+    },
+    "weapon-event": {
+      "gachaTypes": ["302"],
+      "inCensus": true,
+      "base5": {
+        "value": 0.007,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020746/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "consolidated5": {
+        "value": 0.0185,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020746/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "hardPity5": {
+        "value": 80,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020746/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "base4": {
+        "value": 0.06,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020746/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "guarantee4Every": {
+        "value": 10,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020746/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "featuredRate": {
+        "value": 0.75,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020746/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f259ad94b245b2c51ec6a3de2b226c6209492cf7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "catchUp": null,
+      "guaranteeAfterLoss": true,
+      "source": {
+        "url": "https://uigf.org/en/standards/uigf.html",
+        "archive": "https://web.archive.org/web/20261010020255/https://uigf.org/en/standards/uigf.html",
+        "retrieved": "2026-10-10"
+      }
+    },
+    "standard": {
+      "gachaTypes": ["200"],
+      "inCensus": true,
+      "base5": {
+        "value": 0.006,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020418/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "consolidated5": {
+        "value": 0.016,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020418/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "hardPity5": {
+        "value": 90,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020418/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "base4": {
+        "value": 0.051,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020418/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "guarantee4Every": {
+        "value": 10,
+        "source": {
+          "url": "https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "archive": "https://web.archive.org/web/20261010020418/https://operation-webstatic.hoyoverse.com/gacha_info/hk4e/os_asia/f84dd3d640d694f1bd7f93a66c8563b767aea5f7/en-us.json",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "featuredRate": null,
+      "catchUp": null,
+      "guaranteeAfterLoss": false,
+      "source": {
+        "url": "https://uigf.org/en/standards/uigf.html",
+        "archive": "https://web.archive.org/web/20261010020255/https://uigf.org/en/standards/uigf.html",
+        "retrieved": "2026-10-10"
+      }
+    },
+    "beginner": {
+      "gachaTypes": ["100"],
+      "inCensus": false,
+      "base5": {
+        "value": 0.006,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "archive": "https://web.archive.org/web/20260112041446/https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "consolidated5": {
+        "value": 0.016,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "archive": "https://web.archive.org/web/20260112041446/https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "hardPity5": {
+        "value": 90,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "archive": "https://web.archive.org/web/20260112041446/https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "base4": {
+        "value": 0.051,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "archive": "https://web.archive.org/web/20260112041446/https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "guarantee4Every": {
+        "value": 10,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "archive": "https://web.archive.org/web/20260112041446/https://genshin-impact.fandom.com/wiki/Beginners%27_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "featuredRate": null,
+      "catchUp": null,
+      "guaranteeAfterLoss": false,
+      "source": {
+        "url": "https://uigf.org/en/standards/uigf.html",
+        "archive": "https://web.archive.org/web/20261010020255/https://uigf.org/en/standards/uigf.html",
+        "retrieved": "2026-10-10"
+      }
+    },
+    "chronicled": {
+      "gachaTypes": ["500"],
+      "inCensus": true,
+      "base5": {
+        "value": 0.006,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "archive": "https://web.archive.org/web/20260722193251/https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "consolidated5": {
+        "value": 0.016,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "archive": "https://web.archive.org/web/20260722193251/https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "hardPity5": {
+        "value": 90,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "archive": "https://web.archive.org/web/20260722193251/https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "base4": {
+        "value": 0.051,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "archive": "https://web.archive.org/web/20260722193251/https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "guarantee4Every": {
+        "value": 10,
+        "source": {
+          "url": "https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "archive": "https://web.archive.org/web/20260722193251/https://genshin-impact.fandom.com/wiki/Chronicled_Wish",
+          "retrieved": "2026-10-10"
+        }
+      },
+      "featuredRate": null,
+      "catchUp": null,
+      "guaranteeAfterLoss": true,
+      "source": {
+        "url": "https://uigf.org/en/standards/uigf.html",
+        "archive": "https://web.archive.org/web/20261010020255/https://uigf.org/en/standards/uigf.html",
+        "retrieved": "2026-10-10"
+      }
+    }
+  },
+  "standard5": [
+    {
+      "itemId": "10000016",
+      "name": "Diluc",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "10000003",
+      "name": "Jean",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "10000042",
+      "name": "Keqing",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "10000041",
+      "name": "Mona",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "10000035",
+      "name": "Qiqi",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "15502",
+      "name": "Amos' Bow",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "11501",
+      "name": "Aquila Favonia",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "14502",
+      "name": "Lost Prayer to the Sacred Winds",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "13505",
+      "name": "Primordial Jade Winged-Spear",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "14501",
+      "name": "Skyward Atlas",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "11502",
+      "name": "Skyward Blade",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "15501",
+      "name": "Skyward Harp",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "12501",
+      "name": "Skyward Pride",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "13502",
+      "name": "Skyward Spine",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "12502",
+      "name": "Wolf's Gravestone",
+      "from": "2020-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "archive": "https://web.archive.org/web/20260604213745/https://genshin-impact.fandom.com/wiki/Wanderlust_Invocation",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "10000069",
+      "name": "Tighnari",
+      "from": "2022-09-28",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Tighnari",
+        "archive": "https://web.archive.org/web/20260917005507/https://genshin-impact.fandom.com/wiki/Tighnari",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "10000079",
+      "name": "Dehya",
+      "from": "2023-04-12",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Dehya",
+        "archive": "https://web.archive.org/web/20260924035148/https://genshin-impact.fandom.com/wiki/Dehya",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "itemId": "10000109",
+      "name": "Yumemizuki Mizuki",
+      "from": "2025-03-26",
+      "to": null,
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/Yumemizuki_Mizuki",
+        "archive": "https://web.archive.org/web/20260917005530/https://genshin-impact.fandom.com/wiki/Yumemizuki_Mizuki",
+        "retrieved": "2026-10-10"
+      }
+    }
+  ],
+  "schedule": [
+    {
+      "id": "5.8-2-301",
+      "gachaType": "301",
+      "version": "5.8",
+      "start": {
+        "serverLocal": "2025-08-19T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2025-09-09T14:59:59"
+      },
+      "featured5": ["10000102"],
+      "featured4": ["10000113", "10000105", "10000032"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/158611",
+        "archive": "https://web.archive.org/web/20261010021216/https://genshin.hoyoverse.com/en/news/detail/158611",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "5.8-2-400",
+      "gachaType": "400",
+      "version": "5.8",
+      "start": {
+        "serverLocal": "2025-08-19T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2025-09-09T14:59:59"
+      },
+      "featured5": ["10000104"],
+      "featured4": ["10000113", "10000105", "10000032"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/158611",
+        "archive": "https://web.archive.org/web/20261010021216/https://genshin.hoyoverse.com/en/news/detail/158611",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "5.8-2-302",
+      "gachaType": "302",
+      "version": "5.8",
+      "start": {
+        "serverLocal": "2025-08-19T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2025-09-09T14:59:59"
+      },
+      "featured5": ["14516", "15514"],
+      "featured4": ["12430", "14430", "15430", "11401", "13407"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/158611",
+        "archive": "https://web.archive.org/web/20261010021216/https://genshin.hoyoverse.com/en/news/detail/158611",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.0-1-301",
+      "gachaType": "301",
+      "version": "6.0",
+      "start": {
+        "utc": "2025-09-09T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-09-30T17:59:59"
+      },
+      "featured5": ["10000119"],
+      "featured4": ["10000014", "10000065", "10000081"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/159274",
+        "archive": "https://web.archive.org/web/20261010021250/https://genshin.hoyoverse.com/en/news/detail/159274",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.0-1-400",
+      "gachaType": "400",
+      "version": "6.0",
+      "start": {
+        "utc": "2025-09-09T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-09-30T17:59:59"
+      },
+      "featured5": ["10000073"],
+      "featured4": ["10000014", "10000065", "10000081"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/159274",
+        "archive": "https://web.archive.org/web/20261010021250/https://genshin.hoyoverse.com/en/news/detail/159274",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.0-1-302",
+      "gachaType": "302",
+      "version": "6.0",
+      "start": {
+        "utc": "2025-09-09T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-09-30T17:59:59"
+      },
+      "featured5": ["14520", "14511"],
+      "featured4": ["11402", "12403", "13401", "14403", "15402"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/159274",
+        "archive": "https://web.archive.org/web/20261010021250/https://genshin.hoyoverse.com/en/news/detail/159274",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.0-1-500",
+      "gachaType": "500",
+      "version": "6.0",
+      "start": {
+        "utc": "2025-09-09T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-09-30T17:59:59"
+      },
+      "featured5": [
+        "10000079",
+        "10000078",
+        "10000075",
+        "10000071",
+        "10000070",
+        "10000069",
+        "11512",
+        "11511",
+        "12511",
+        "13511",
+        "14512",
+        "15511"
+      ],
+      "featured4": [],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/159274",
+        "archive": "https://web.archive.org/web/20261010021250/https://genshin.hoyoverse.com/en/news/detail/159274",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.0-2-301",
+      "gachaType": "301",
+      "version": "6.0",
+      "start": {
+        "serverLocal": "2025-09-30T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2025-10-21T14:59:59"
+      },
+      "featured5": ["10000120"],
+      "featured4": ["10000121", "10000043", "10000068"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/159690",
+        "archive": "https://web.archive.org/web/20261010021359/https://genshin.hoyoverse.com/en/news/detail/159690",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.0-2-400",
+      "gachaType": "400",
+      "version": "6.0",
+      "start": {
+        "serverLocal": "2025-09-30T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2025-10-21T14:59:59"
+      },
+      "featured5": ["10000060"],
+      "featured4": ["10000121", "10000043", "10000068"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/159690",
+        "archive": "https://web.archive.org/web/20261010021359/https://genshin.hoyoverse.com/en/news/detail/159690",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.0-2-302",
+      "gachaType": "302",
+      "version": "6.0",
+      "start": {
+        "serverLocal": "2025-09-30T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2025-10-21T14:59:59"
+      },
+      "featured5": ["13516", "15508"],
+      "featured4": ["11405", "12401", "13407", "14401", "15403"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/159690",
+        "archive": "https://web.archive.org/web/20261010021359/https://genshin.hoyoverse.com/en/news/detail/159690",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.1-1-301",
+      "gachaType": "301",
+      "version": "6.1",
+      "start": {
+        "utc": "2025-10-21T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-11-11T17:59:59"
+      },
+      "featured5": ["10000122"],
+      "featured4": ["10000025", "10000067", "10000077"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/160338",
+        "archive": "https://web.archive.org/web/20261010021514/https://genshin.hoyoverse.com/en/news/detail/160338",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.1-1-400",
+      "gachaType": "400",
+      "version": "6.1",
+      "start": {
+        "utc": "2025-10-21T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-11-11T17:59:59"
+      },
+      "featured5": ["10000089"],
+      "featured4": ["10000025", "10000067", "10000077"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/160338",
+        "archive": "https://web.archive.org/web/20261010021514/https://genshin.hoyoverse.com/en/news/detail/160338",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.1-1-302",
+      "gachaType": "302",
+      "version": "6.1",
+      "start": {
+        "utc": "2025-10-21T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-11-11T17:59:59"
+      },
+      "featured5": ["14521", "11513"],
+      "featured4": ["11434", "13434", "14434", "12402", "15401"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/160338",
+        "archive": "https://web.archive.org/web/20261010021514/https://genshin.hoyoverse.com/en/news/detail/160338",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.1-2-301",
+      "gachaType": "301",
+      "version": "6.1",
+      "start": {
+        "serverLocal": "2025-11-11T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2025-12-02T14:59:59"
+      },
+      "featured5": ["10000096"],
+      "featured4": ["10000108", "10000045", "10000064"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/160749",
+        "archive": "https://web.archive.org/web/20261010021546/https://genshin.hoyoverse.com/en/news/detail/160749",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.1-2-400",
+      "gachaType": "400",
+      "version": "6.1",
+      "start": {
+        "serverLocal": "2025-11-11T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2025-12-02T14:59:59"
+      },
+      "featured5": ["10000030"],
+      "featured4": ["10000108", "10000045", "10000064"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/160749",
+        "archive": "https://web.archive.org/web/20261010021546/https://genshin.hoyoverse.com/en/news/detail/160749",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.1-2-302",
+      "gachaType": "302",
+      "version": "6.1",
+      "start": {
+        "serverLocal": "2025-11-11T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2025-12-02T14:59:59"
+      },
+      "featured5": ["13512", "13504"],
+      "featured4": ["11427", "12427", "15427", "13401", "14403"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/160749",
+        "archive": "https://web.archive.org/web/20261010021546/https://genshin.hoyoverse.com/en/news/detail/160749",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.2-1-301",
+      "gachaType": "301",
+      "version": "6.2",
+      "start": {
+        "utc": "2025-12-02T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-12-23T17:59:59"
+      },
+      "featured5": ["10000123"],
+      "featured4": ["10000124", "10000032", "10000076"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/161137",
+        "archive": "https://web.archive.org/web/20261010021616/https://genshin.hoyoverse.com/en/news/detail/161137",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.2-1-400",
+      "gachaType": "400",
+      "version": "6.2",
+      "start": {
+        "utc": "2025-12-02T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-12-23T17:59:59"
+      },
+      "featured5": ["10000022"],
+      "featured4": ["10000124", "10000032", "10000076"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/161137",
+        "archive": "https://web.archive.org/web/20261010021616/https://genshin.hoyoverse.com/en/news/detail/161137",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.2-1-302",
+      "gachaType": "302",
+      "version": "6.2",
+      "start": {
+        "utc": "2025-12-02T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2025-12-23T17:59:59"
+      },
+      "featured5": ["11518", "15515"],
+      "featured4": ["11410", "13427", "14410", "12405", "15402"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/161137",
+        "archive": "https://web.archive.org/web/20261010021616/https://genshin.hoyoverse.com/en/news/detail/161137",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.2-2-301",
+      "gachaType": "301",
+      "version": "6.2",
+      "start": {
+        "serverLocal": "2025-12-23T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-01-13T14:59:59"
+      },
+      "featured5": ["10000111"],
+      "featured4": ["10000110", "10000090", "10000092"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/161521",
+        "archive": "https://web.archive.org/web/20261010021721/https://genshin.hoyoverse.com/en/news/detail/161521",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.2-2-400",
+      "gachaType": "400",
+      "version": "6.2",
+      "start": {
+        "serverLocal": "2025-12-23T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-01-13T14:59:59"
+      },
+      "featured5": ["10000103"],
+      "featured4": ["10000110", "10000090", "10000092"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/161521",
+        "archive": "https://web.archive.org/web/20261010021721/https://genshin.hoyoverse.com/en/news/detail/161521",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.2-2-302",
+      "gachaType": "302",
+      "version": "6.2",
+      "start": {
+        "serverLocal": "2025-12-23T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-01-13T14:59:59"
+      },
+      "featured5": ["14519", "11516"],
+      "featured4": ["12430", "15410", "11401", "13407", "14402"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/161521",
+        "archive": "https://web.archive.org/web/20261010021721/https://genshin.hoyoverse.com/en/news/detail/161521",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.3-1-301",
+      "gachaType": "301",
+      "version": "6.3",
+      "start": {
+        "utc": "2026-01-13T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-02-03T17:59:59"
+      },
+      "featured5": ["10000125"],
+      "featured4": ["10000097", "10000031", "10000113"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162089",
+        "archive": "https://web.archive.org/web/20261010021834/https://genshin.hoyoverse.com/en/news/detail/162089",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.3-1-400",
+      "gachaType": "400",
+      "version": "6.3",
+      "start": {
+        "utc": "2026-01-13T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-02-03T17:59:59"
+      },
+      "featured5": ["10000116"],
+      "featured4": ["10000097", "10000031", "10000113"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162089",
+        "archive": "https://web.archive.org/web/20261010021834/https://genshin.hoyoverse.com/en/news/detail/162089",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.3-1-302",
+      "gachaType": "302",
+      "version": "6.3",
+      "start": {
+        "utc": "2026-01-13T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-02-03T17:59:59"
+      },
+      "featured5": ["14522", "13515"],
+      "featured4": ["13430", "14430", "15412", "11402", "12403"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162089",
+        "archive": "https://web.archive.org/web/20261010021834/https://genshin.hoyoverse.com/en/news/detail/162089",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.3-2-301",
+      "gachaType": "301",
+      "version": "6.3",
+      "start": {
+        "serverLocal": "2026-02-03T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-02-24T14:59:59"
+      },
+      "featured5": ["10000126"],
+      "featured4": ["10000127", "10000121", "10000055"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162090",
+        "archive": "https://web.archive.org/web/20261010021905/https://genshin.hoyoverse.com/en/news/detail/162090",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.3-2-400",
+      "gachaType": "400",
+      "version": "6.3",
+      "start": {
+        "serverLocal": "2026-02-03T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-02-24T14:59:59"
+      },
+      "featured5": ["10000087"],
+      "featured4": ["10000127", "10000121", "10000055"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162090",
+        "archive": "https://web.archive.org/web/20261010021905/https://genshin.hoyoverse.com/en/news/detail/162090",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.3-2-302",
+      "gachaType": "302",
+      "version": "6.3",
+      "start": {
+        "serverLocal": "2026-02-03T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-02-24T14:59:59"
+      },
+      "featured5": ["11519", "14514"],
+      "featured4": ["11418", "12401", "13401", "14409", "15401"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162090",
+        "archive": "https://web.archive.org/web/20261010021905/https://genshin.hoyoverse.com/en/news/detail/162090",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.4-1-301",
+      "gachaType": "301",
+      "version": "6.4",
+      "start": {
+        "utc": "2026-02-24T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-03-17T17:59:59"
+      },
+      "featured5": ["10000128"],
+      "featured4": ["10000032", "10000023", "10000043"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162721",
+        "archive": "https://web.archive.org/web/20261010021955/https://genshin.hoyoverse.com/en/news/detail/162721",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.4-1-400",
+      "gachaType": "400",
+      "version": "6.4",
+      "start": {
+        "utc": "2026-02-24T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-03-17T17:59:59"
+      },
+      "featured5": ["10000120"],
+      "featured4": ["10000032", "10000023", "10000043"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162721",
+        "archive": "https://web.archive.org/web/20261010021955/https://genshin.hoyoverse.com/en/news/detail/162721",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.4-1-302",
+      "gachaType": "302",
+      "version": "6.4",
+      "start": {
+        "utc": "2026-02-24T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-03-17T17:59:59"
+      },
+      "featured5": ["12515", "13516"],
+      "featured4": ["13434", "11401", "12401", "14403", "15403"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162721",
+        "archive": "https://web.archive.org/web/20261010021955/https://genshin.hoyoverse.com/en/news/detail/162721",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.4-1-500",
+      "gachaType": "500",
+      "version": "6.4",
+      "start": {
+        "utc": "2026-02-24T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-03-17T17:59:59"
+      },
+      "featured5": [
+        "10000051",
+        "10000041",
+        "10000038",
+        "10000029",
+        "10000016",
+        "10000003",
+        "11502",
+        "11501",
+        "12503",
+        "12502",
+        "12501",
+        "13502",
+        "14502",
+        "14501",
+        "15503",
+        "15501"
+      ],
+      "featured4": [],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162721",
+        "archive": "https://web.archive.org/web/20261010021955/https://genshin.hoyoverse.com/en/news/detail/162721",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.4-2-301",
+      "gachaType": "301",
+      "version": "6.4",
+      "start": {
+        "serverLocal": "2026-03-17T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-04-07T14:59:59"
+      },
+      "featured5": ["10000114"],
+      "featured4": ["10000115", "10000072", "10000088"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163094",
+        "archive": "https://web.archive.org/web/20261010022059/https://genshin.hoyoverse.com/en/news/detail/163094",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.4-2-400",
+      "gachaType": "400",
+      "version": "6.4",
+      "start": {
+        "serverLocal": "2026-03-17T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-04-07T14:59:59"
+      },
+      "featured5": ["10000112"],
+      "featured4": ["10000115", "10000072", "10000088"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163094",
+        "archive": "https://web.archive.org/web/20261010022059/https://genshin.hoyoverse.com/en/news/detail/163094",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.4-2-302",
+      "gachaType": "302",
+      "version": "6.4",
+      "start": {
+        "serverLocal": "2026-03-17T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-04-07T14:59:59"
+      },
+      "featured5": ["11517", "13514"],
+      "featured4": ["11402", "12402", "13407", "14401", "15405"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163094",
+        "archive": "https://web.archive.org/web/20261010022059/https://genshin.hoyoverse.com/en/news/detail/163094",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.5-1-301",
+      "gachaType": "301",
+      "version": "6.5",
+      "start": {
+        "utc": "2026-04-07T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-04-28T17:59:59"
+      },
+      "featured5": ["10000130"],
+      "featured4": ["10000127", "10000121", "10000034"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163415",
+        "archive": "https://web.archive.org/web/20261010022157/https://genshin.hoyoverse.com/en/news/detail/163415",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.5-1-400",
+      "gachaType": "400",
+      "version": "6.5",
+      "start": {
+        "utc": "2026-04-07T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-04-28T17:59:59"
+      },
+      "featured5": ["10000104"],
+      "featured4": ["10000127", "10000121", "10000034"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163415",
+        "archive": "https://web.archive.org/web/20261010022157/https://genshin.hoyoverse.com/en/news/detail/163415",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.5-1-302",
+      "gachaType": "302",
+      "version": "6.5",
+      "start": {
+        "utc": "2026-04-07T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-04-28T17:59:59"
+      },
+      "featured5": ["15516", "15514"],
+      "featured4": ["15430", "11405", "12403", "13401", "14409"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163415",
+        "archive": "https://web.archive.org/web/20261010022157/https://genshin.hoyoverse.com/en/news/detail/163415",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.5-2-301",
+      "gachaType": "301",
+      "version": "6.5",
+      "start": {
+        "serverLocal": "2026-04-28T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-05-19T14:59:59"
+      },
+      "featured5": ["10000119"],
+      "featured4": ["10000025", "10000061", "10000124"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163629",
+        "archive": "https://web.archive.org/web/20261010022307/https://genshin.hoyoverse.com/en/news/detail/163629",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.5-2-400",
+      "gachaType": "400",
+      "version": "6.5",
+      "start": {
+        "serverLocal": "2026-04-28T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-05-19T14:59:59"
+      },
+      "featured5": ["10000122"],
+      "featured4": ["10000025", "10000061", "10000124"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163629",
+        "archive": "https://web.archive.org/web/20261010022307/https://genshin.hoyoverse.com/en/news/detail/163629",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.5-2-302",
+      "gachaType": "302",
+      "version": "6.5",
+      "start": {
+        "serverLocal": "2026-04-28T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-05-19T14:59:59"
+      },
+      "featured5": ["14520", "14521"],
+      "featured4": ["14434", "11403", "12405", "13407", "15401"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163629",
+        "archive": "https://web.archive.org/web/20261010022307/https://genshin.hoyoverse.com/en/news/detail/163629",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.5-2-500",
+      "gachaType": "500",
+      "version": "6.5",
+      "start": {
+        "serverLocal": "2026-04-28T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-05-19T14:59:59"
+      },
+      "featured5": [
+        "10000099",
+        "10000098",
+        "10000095",
+        "10000091",
+        "10000084",
+        "11515",
+        "12512",
+        "13513",
+        "15513",
+        "15512"
+      ],
+      "featured4": [],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163629",
+        "archive": "https://web.archive.org/web/20261010022307/https://genshin.hoyoverse.com/en/news/detail/163629",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.6-1-301",
+      "gachaType": "301",
+      "version": "6.6",
+      "start": {
+        "utc": "2026-05-19T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-06-09T17:59:59"
+      },
+      "featured5": ["10000131"],
+      "featured4": ["10000132", "10000020", "10000031"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/164019",
+        "archive": "https://web.archive.org/web/20261010022431/https://genshin.hoyoverse.com/en/news/detail/164019",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.6-1-400",
+      "gachaType": "400",
+      "version": "6.6",
+      "start": {
+        "utc": "2026-05-19T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-06-09T17:59:59"
+      },
+      "featured5": ["10000123"],
+      "featured4": ["10000132", "10000020", "10000031"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/164019",
+        "archive": "https://web.archive.org/web/20261010022431/https://genshin.hoyoverse.com/en/news/detail/164019",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.6-1-302",
+      "gachaType": "302",
+      "version": "6.6",
+      "start": {
+        "utc": "2026-05-19T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-06-09T17:59:59"
+      },
+      "featured5": ["14523", "11518"],
+      "featured4": ["11434", "15412", "12402", "13401", "14402"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/164019",
+        "archive": "https://web.archive.org/web/20261010022431/https://genshin.hoyoverse.com/en/news/detail/164019",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.6-2-301",
+      "gachaType": "301",
+      "version": "6.6",
+      "start": {
+        "serverLocal": "2026-06-09T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-06-30T14:59:59"
+      },
+      "featured5": ["10000129"],
+      "featured4": ["10000080", "10000023", "10000032"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/164591",
+        "archive": "https://web.archive.org/web/20261010022508/https://genshin.hoyoverse.com/en/news/detail/164591",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.6-2-400",
+      "gachaType": "400",
+      "version": "6.6",
+      "start": {
+        "serverLocal": "2026-06-09T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-06-30T14:59:59"
+      },
+      "featured5": ["10000106"],
+      "featured4": ["10000080", "10000023", "10000032"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/164591",
+        "archive": "https://web.archive.org/web/20261010022508/https://genshin.hoyoverse.com/en/news/detail/164591",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.6-2-302",
+      "gachaType": "302",
+      "version": "6.6",
+      "start": {
+        "serverLocal": "2026-06-09T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-06-30T14:59:59"
+      },
+      "featured5": ["13517", "12514"],
+      "featured4": ["11410", "14410", "15410", "12405", "13407"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/164591",
+        "archive": "https://web.archive.org/web/20261010022508/https://genshin.hoyoverse.com/en/news/detail/164591",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.7-1-301",
+      "gachaType": "301",
+      "version": "6.7",
+      "start": {
+        "utc": "2026-06-30T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-07-21T17:59:59"
+      },
+      "featured5": ["10000133"],
+      "featured4": ["10000024", "10000039", "10000085"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165007",
+        "archive": "https://web.archive.org/web/20261010022538/https://genshin.hoyoverse.com/en/news/detail/165007",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.7-1-400",
+      "gachaType": "400",
+      "version": "6.7",
+      "start": {
+        "utc": "2026-06-30T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-07-21T17:59:59"
+      },
+      "featured5": ["10000107"],
+      "featured4": ["10000024", "10000039", "10000085"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165007",
+        "archive": "https://web.archive.org/web/20261010022538/https://genshin.hoyoverse.com/en/news/detail/165007",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.7-1-302",
+      "gachaType": "302",
+      "version": "6.7",
+      "start": {
+        "utc": "2026-06-30T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-07-21T17:59:59"
+      },
+      "featured5": ["12516", "14517"],
+      "featured4": ["11401", "12405", "13401", "14403", "15403"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165007",
+        "archive": "https://web.archive.org/web/20261010022538/https://genshin.hoyoverse.com/en/news/detail/165007",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.7-2-301",
+      "gachaType": "301",
+      "version": "6.7",
+      "start": {
+        "serverLocal": "2026-07-21T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-08-11T14:59:59"
+      },
+      "featured5": ["10000125"],
+      "featured4": ["10000124", "10000105", "10000097"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165236",
+        "archive": "https://web.archive.org/web/20261010022609/https://genshin.hoyoverse.com/en/news/detail/165236",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.7-2-400",
+      "gachaType": "400",
+      "version": "6.7",
+      "start": {
+        "serverLocal": "2026-07-21T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-08-11T14:59:59"
+      },
+      "featured5": ["10000052"],
+      "featured4": ["10000124", "10000105", "10000097"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165236",
+        "archive": "https://web.archive.org/web/20261010022609/https://genshin.hoyoverse.com/en/news/detail/165236",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "6.7-2-302",
+      "gachaType": "302",
+      "version": "6.7",
+      "start": {
+        "serverLocal": "2026-07-21T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-08-11T14:59:59"
+      },
+      "featured5": ["14522", "13509"],
+      "featured4": ["14430", "11403", "12402", "13407", "15401"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165236",
+        "archive": "https://web.archive.org/web/20261010022609/https://genshin.hoyoverse.com/en/news/detail/165236",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "7.0-1-301",
+      "gachaType": "301",
+      "version": "7.0",
+      "start": {
+        "utc": "2026-08-11T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-09-01T17:59:59"
+      },
+      "featured5": ["10000150"],
+      "featured4": ["10000148", "10000043", "10000083"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165610",
+        "archive": "https://web.archive.org/web/20261010022725/https://genshin.hoyoverse.com/en/news/detail/165610",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "7.0-1-400",
+      "gachaType": "400",
+      "version": "7.0",
+      "start": {
+        "utc": "2026-08-11T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-09-01T17:59:59"
+      },
+      "featured5": ["10000096"],
+      "featured4": ["10000148", "10000043", "10000083"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165610",
+        "archive": "https://web.archive.org/web/20261010022725/https://genshin.hoyoverse.com/en/news/detail/165610",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "7.0-1-302",
+      "gachaType": "302",
+      "version": "7.0",
+      "start": {
+        "utc": "2026-08-11T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-09-01T17:59:59"
+      },
+      "featured5": ["11520", "13512"],
+      "featured4": ["11401", "12402", "13401", "14403", "15405"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165610",
+        "archive": "https://web.archive.org/web/20261010022725/https://genshin.hoyoverse.com/en/news/detail/165610",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "7.0-2-301",
+      "gachaType": "301",
+      "version": "7.0",
+      "start": {
+        "serverLocal": "2026-09-01T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-09-22T14:59:59"
+      },
+      "featured5": ["10000120"],
+      "featured4": ["10000121", "10000110", "10000108"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165901",
+        "archive": "https://web.archive.org/web/20261010022901/https://genshin.hoyoverse.com/en/news/detail/165901",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "7.0-2-400",
+      "gachaType": "400",
+      "version": "7.0",
+      "start": {
+        "serverLocal": "2026-09-01T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-09-22T14:59:59"
+      },
+      "featured5": ["10000116"],
+      "featured4": ["10000121", "10000110", "10000108"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165901",
+        "archive": "https://web.archive.org/web/20261010022901/https://genshin.hoyoverse.com/en/news/detail/165901",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "7.0-2-302",
+      "gachaType": "302",
+      "version": "7.0",
+      "start": {
+        "serverLocal": "2026-09-01T18:00:00"
+      },
+      "end": {
+        "serverLocal": "2026-09-22T14:59:59"
+      },
+      "featured5": ["13516", "13515"],
+      "featured4": ["11402", "12401", "13407", "14409", "15402"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165901",
+        "archive": "https://web.archive.org/web/20261010022901/https://genshin.hoyoverse.com/en/news/detail/165901",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "7.1-1-301",
+      "gachaType": "301",
+      "version": "7.1",
+      "start": {
+        "utc": "2026-09-22T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-10-13T17:59:59"
+      },
+      "featured5": ["10000143"],
+      "featured4": ["10000039", "10000076", "10000036"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/166228",
+        "archive": "https://web.archive.org/web/20261010022941/https://genshin.hoyoverse.com/en/news/detail/166228",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "7.1-1-400",
+      "gachaType": "400",
+      "version": "7.1",
+      "start": {
+        "utc": "2026-09-22T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-10-13T17:59:59"
+      },
+      "featured5": ["10000140"],
+      "featured4": ["10000039", "10000076", "10000036"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/166228",
+        "archive": "https://web.archive.org/web/20261010022941/https://genshin.hoyoverse.com/en/news/detail/166228",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "id": "7.1-1-302",
+      "gachaType": "302",
+      "version": "7.1",
+      "start": {
+        "utc": "2026-09-22T22:00:00Z"
+      },
+      "end": {
+        "serverLocal": "2026-10-13T17:59:59"
+      },
+      "featured5": ["11522", "14524"],
+      "featured4": ["11437", "14437", "15437", "12401", "13401"],
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/166228",
+        "archive": "https://web.archive.org/web/20261010022941/https://genshin.hoyoverse.com/en/news/detail/166228",
+        "retrieved": "2026-10-10"
+      }
+    }
+  ],
+  "regions": [
+    {
+      "prefix": "1",
+      "digits": 9,
+      "region": "cn",
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/UID",
+        "archive": "https://web.archive.org/web/20260730221323/https://genshin-impact.fandom.com/wiki/UID",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "prefix": "2",
+      "digits": 9,
+      "region": "cn",
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/UID",
+        "archive": "https://web.archive.org/web/20260730221323/https://genshin-impact.fandom.com/wiki/UID",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "prefix": "3",
+      "digits": 9,
+      "region": "cn",
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/UID",
+        "archive": "https://web.archive.org/web/20260730221323/https://genshin-impact.fandom.com/wiki/UID",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "prefix": "5",
+      "digits": 9,
+      "region": "cn",
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/UID",
+        "archive": "https://web.archive.org/web/20260730221323/https://genshin-impact.fandom.com/wiki/UID",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "prefix": "6",
+      "digits": 9,
+      "region": "america",
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/UID",
+        "archive": "https://web.archive.org/web/20260730221323/https://genshin-impact.fandom.com/wiki/UID",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "prefix": "7",
+      "digits": 9,
+      "region": "europe",
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/UID",
+        "archive": "https://web.archive.org/web/20260730221323/https://genshin-impact.fandom.com/wiki/UID",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "prefix": "8",
+      "digits": 9,
+      "region": "asia",
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/UID",
+        "archive": "https://web.archive.org/web/20260730221323/https://genshin-impact.fandom.com/wiki/UID",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "prefix": "18",
+      "digits": 10,
+      "region": "asia",
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/UID",
+        "archive": "https://web.archive.org/web/20260730221323/https://genshin-impact.fandom.com/wiki/UID",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "prefix": "9",
+      "digits": 9,
+      "region": "tw-hk-mo",
+      "source": {
+        "url": "https://genshin-impact.fandom.com/wiki/UID",
+        "archive": "https://web.archive.org/web/20260730221323/https://genshin-impact.fandom.com/wiki/UID",
+        "retrieved": "2026-10-10"
+      }
+    }
+  ],
+  "patches": [
+    {
+      "version": "6.0",
+      "start": {
+        "utc": "2025-09-09T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/159349",
+        "archive": "https://web.archive.org/web/20261010023448/https://genshin.hoyoverse.com/en/news/detail/159349",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "version": "6.1",
+      "start": {
+        "utc": "2025-10-21T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/160521",
+        "archive": "https://web.archive.org/web/20261010023619/https://genshin.hoyoverse.com/en/news/detail/160521",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "version": "6.2",
+      "start": {
+        "utc": "2025-12-02T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/161275",
+        "archive": "https://web.archive.org/web/20261010023741/https://genshin.hoyoverse.com/en/news/detail/161275",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "version": "6.3",
+      "start": {
+        "utc": "2026-01-13T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162159",
+        "archive": "https://web.archive.org/web/20261010023920/https://genshin.hoyoverse.com/en/news/detail/162159",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "version": "6.4",
+      "start": {
+        "utc": "2026-02-24T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/162806",
+        "archive": "https://web.archive.org/web/20261010024014/https://genshin.hoyoverse.com/en/news/detail/162806",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "version": "6.5",
+      "start": {
+        "utc": "2026-04-07T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/163454",
+        "archive": "https://web.archive.org/web/20261010024132/https://genshin.hoyoverse.com/en/news/detail/163454",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "version": "6.6",
+      "start": {
+        "utc": "2026-05-19T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/164256",
+        "archive": "https://web.archive.org/web/20261010024306/https://genshin.hoyoverse.com/en/news/detail/164256",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "version": "6.7",
+      "start": {
+        "utc": "2026-06-30T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165076",
+        "archive": "https://web.archive.org/web/20261010024437/https://genshin.hoyoverse.com/en/news/detail/165076",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "version": "7.0",
+      "start": {
+        "utc": "2026-08-11T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/165655",
+        "archive": "https://web.archive.org/web/20261010024612/https://genshin.hoyoverse.com/en/news/detail/165655",
+        "retrieved": "2026-10-10"
+      }
+    },
+    {
+      "version": "7.1",
+      "start": {
+        "utc": "2026-09-22T22:00:00Z"
+      },
+      "source": {
+        "url": "https://genshin.hoyoverse.com/en/news/detail/166383",
+        "archive": "https://web.archive.org/web/20261010024640/https://genshin.hoyoverse.com/en/news/detail/166383",
+        "retrieved": "2026-10-10"
+      }
+    }
+  ]
+}
