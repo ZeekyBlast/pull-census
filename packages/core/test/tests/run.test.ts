@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { onlyVerified, runRelease, runWithSensitivity, withoutLatest } from '../../src/tests/run.ts'
+import { onlyVerified, runRelease, runWithSensitivity, withoutRecent } from '../../src/tests/run.ts'
 import { census, rec } from '../fixtures/census.ts'
 import { fixtureRules as rules } from '../fixtures/rules.ts'
 
@@ -28,17 +28,13 @@ test('the beta gate counts complete verified character-event streaks', () => {
   })
 })
 
-test('onlyVerified drops self-reported accounts; withoutLatest drops the last streak per account and pool', () => {
+test('onlyVerified drops self-reported accounts', () => {
   const data = census([
     rec({ end: '2026-09-02T00:00:00+08:00' }),
     rec({ end: '2026-09-03T00:00:00+08:00' }),
     rec({ accountId: 'b', verified: false }),
   ])
   assert.equal(onlyVerified(data).streaks.length, 2)
-  assert.deepEqual(
-    withoutLatest(data).streaks.map((s) => s.end),
-    ['2026-09-02T00:00:00+08:00'],
-  )
 })
 
 test('runWithSensitivity reports a status that moves when self-reported data is added', () => {
@@ -54,4 +50,35 @@ test('runWithSensitivity reports a status that moves when self-reported data is 
       other: 'differs',
     },
   )
+})
+
+test('a self-reported account’s unknown 5★ never pauses the verified verdicts', () => {
+  const data = census([rec(), rec({ accountId: 'b', verified: false })], {
+    unknownItems: [
+      {
+        accountId: 'b',
+        pool: 'character-event',
+        itemId: '19999999',
+        time: '2026-09-01T12:00:00+08:00',
+      },
+    ],
+  })
+  assert.deepEqual(onlyVerified(data).unknownItems, [])
+})
+
+test('withoutRecent drops the last 90 pulls per account and pool; the streak crossing the cut becomes open', () => {
+  const data = census([
+    rec({ length: 60, multi: Array(60).fill(false) }),
+    rec({ length: 50, multi: Array(50).fill(true) }),
+    rec({ length: 70, multi: Array(70).fill(false) }),
+  ])
+  const trimmed = withoutRecent(data)
+  assert.deepEqual(
+    trimmed.streaks.map((s) => [s.length, s.censored, s.outcome, s.guaranteed]),
+    [
+      [60, false, 'featured', false],
+      [30, true, null, null],
+    ],
+  )
+  assert.equal(trimmed.streaks[1]!.multi.length, 30)
 })

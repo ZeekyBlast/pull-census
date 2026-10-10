@@ -24,6 +24,11 @@ test('pools and the gacha types that share their pity', () => {
     },
   )
   assert.equal(rules.pools.beginner!.inCensus, false)
+  // Lightrace Wish may share the chronicled pity but its gacha_type is unsourced: keep chronicled out of the census.
+  assert.equal(rules.pools.chronicled!.inCensus, false)
+  // Epitomized Path: the state after a featured weapon can't be known from history.
+  assert.equal(rules.pools['weapon-event']!.chartPath?.value, 1)
+  assert.equal(rules.pools['character-event']!.chartPath, null)
 })
 
 test('exactly one phase per event banner at midday on every server, every day since coverage start', () => {

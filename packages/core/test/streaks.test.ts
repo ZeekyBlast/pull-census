@@ -98,12 +98,11 @@ test('gapDaysBefore measures from the previous pull in any pool', () => {
   assert.equal(streaks.find((s) => s.pool === 'standard')!.gapDaysBefore, null)
 })
 
-test('account facts: region, coarse uid and pulls per 30 days', () => {
+test('account facts: region and coarse uid', () => {
   const pulls = mkPulls('character-event', Array<3>(60).fill(3), { stepMs: 86_400_000 })
   const { facts } = deriveStreaks(pulls, rules, acc)
   assert.equal(facts[0]!.region, 'asia')
   assert.equal(facts[0]!.uidCoarse, 812)
-  assert.ok(Math.abs(facts[0]!.pullsPer30d - 60 / (59 / 30)) < 1e-9)
 })
 
 test('mergeCensus concatenates accounts', () => {
@@ -114,4 +113,57 @@ test('mergeCensus concatenates accounts', () => {
   })
   assert.equal(mergeCensus([one, two]).streaks.length, 2)
   assert.equal(mergeCensus([one, two]).facts.length, 2)
+})
+
+test('a chart-path pool cannot know the state after a featured 5★ (Epitomized Path)', () => {
+  const W = '11513'
+  const seq = [W, S, W, W].flatMap((item) => streakOf(4, item))
+  const { streaks } = deriveStreaks(
+    mkPulls('weapon-event', seq, { bannerId: 'T1-302' }),
+    rules,
+    acc,
+  )
+  assert.deepEqual(
+    streaks.map((s) => s.outcome),
+    ['featured', 'standard', 'featured', 'featured'],
+  )
+  assert.deepEqual(
+    streaks.map((s) => s.guaranteed),
+    [null, null, true, null],
+  )
+})
+
+test('recentPulls counts the account’s pulls in the 90 days before a streak starts', () => {
+  const day = 86_400_000
+  const old = mkPulls('standard', [3, 3, 3], {
+    bannerId: null,
+    startMs: Date.parse('2026-05-01T04:00:00Z'),
+  })
+  const recent = mkPulls('standard', [3, 3], {
+    bannerId: null,
+    startMs: Date.parse('2026-08-20T04:00:00Z'),
+  })
+  const now = mkPulls('character-event', [3], {
+    startMs: Date.parse('2026-08-20T04:00:00Z') + 12 * day,
+  })
+  const ce = deriveStreaks([...old, ...recent, ...now], rules, acc).streaks.find(
+    (s) => s.pool === 'character-event',
+  )!
+  assert.equal(ce.recentPulls, 2)
+})
+
+test('a 5★ outside the schedule is unknown but not a registry gap; gaps name their account', () => {
+  const before = mkPulls('character-event', streakOf(4, S), {
+    bannerId: null,
+    startMs: Date.parse('2024-01-01T04:00:00Z'),
+  })
+  const data = deriveStreaks(
+    [...before, ...mkPulls('character-event', streakOf(4, '19999999'))],
+    rules,
+    acc,
+  )
+  assert.equal(data.streaks[0]!.outcome, 'unknown')
+  assert.deepEqual(data.unknownItems, [
+    { accountId: 'a1', pool: 'character-event', itemId: '19999999', time: data.streaks[1]!.end },
+  ])
 })

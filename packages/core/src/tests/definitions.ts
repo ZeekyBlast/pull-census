@@ -19,6 +19,10 @@ export const BASE_RATE_LAST: Record<string, number> = {
   'weapon-event': 62,
 }
 export const RETURNING_GAP_DAYS = 60
+/** Pull volume is measured over this many days before each streak starts, never over the whole history. */
+export const RECENT_VOLUME_DAYS = 90
+/** Selection-bias rerun: drop each account's last N pulls in each pool. */
+export const SENSITIVITY_TRIM_PULLS = 90
 export const REGIONS = ['america', 'europe', 'asia', 'tw-hk-mo'] as const
 /** 50/50 after k losses in a row: k = 0, 1, 2, and 3 or more. */
 export const FIFTY_FIFTY_MAX_K = 3

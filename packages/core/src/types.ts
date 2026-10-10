@@ -44,6 +44,8 @@ export type Streak = {
   /** 50/50 losses since the last won 50/50 (guaranteed 5★ don't reset it); null if unknown. */
   lossesBefore: number | null
   verified: boolean
+  /** The account's pulls (any pool) in the RECENT_VOLUME_DAYS before this streak's first pull. */
+  recentPulls: number
 }
 
 export type AccountFacts = {
@@ -51,7 +53,6 @@ export type AccountFacts = {
   region: string | null
   /** floor(uid / 1e6): a proxy for registration order. */
   uidCoarse: number
-  pullsPer30d: number
   verified: boolean
 }
 
@@ -63,5 +64,5 @@ export type CensusData = {
   facts: AccountFacts[]
   noFour: NoFourRun[]
   /** 5★ item ids that are neither featured nor standard in the rules: the registry needs an update. */
-  unknownItems: { pool: string; itemId: string; time: string }[]
+  unknownItems: { accountId: string; pool: string; itemId: string; time: string }[]
 }

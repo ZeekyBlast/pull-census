@@ -68,6 +68,18 @@ export function isStandard5(rules: Rules, itemId: string, time: string): boolean
   )
 }
 
+/** Does the registry know the banner(s) for this pull at all? */
+export function hasPhase(
+  rules: Rules,
+  pool: string,
+  bannerId: string | null,
+  time: string,
+): boolean {
+  return bannerId
+    ? rules.schedule.some((p) => p.id === bannerId)
+    : activePhases(rules, pool, time).length > 0
+}
+
 /**
  * Was a 5★ the featured one? true / false, or null when the registry has no phase for that time
  * or the item is neither featured nor standard (the registry needs an update; never guess).

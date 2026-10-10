@@ -43,10 +43,12 @@ export function splits(data: CensusData, rules: Rules): Split[] {
     side: (s) => (age.get(s.accountId) === 0 ? 'A' : age.get(s.accountId) === 4 ? 'B' : null),
   })
 
-  const volume = quintiles(data.facts, (f) => f.pullsPer30d)
+  // Volume before each streak, never over the whole history: unlucky players pull more to reach a goal.
+  const byVolume = [...data.streaks].sort((a, b) => a.recentPulls - b.recentPulls)
+  const volume = new Map(byVolume.map((s, i) => [s, Math.floor((i * 5) / byVolume.length)]))
   out.push({
     name: 'pull-volume',
-    side: (s) => (volume.get(s.accountId) === 4 ? 'A' : volume.get(s.accountId) === 0 ? 'B' : null),
+    side: (s) => (volume.get(s) === 4 ? 'A' : volume.get(s) === 0 ? 'B' : null),
   })
 
   out.push({
@@ -64,7 +66,8 @@ export function splits(data: CensusData, rules: Rules): Split[] {
     })
   }
 
-  // Patches inside the data's time span: streaks wholly before vs wholly after; spanning streaks left out.
+  // Patches inside the data's time span. A streak belongs to the side it starts on: its end depends on its
+  // outcome, so splitting on ends (or dropping spanning streaks) would favour short streaks before the patch.
   const starts = data.streaks.map((s) => s.start).sort()
   const ends = data.streaks.map((s) => s.end).sort()
   for (const patch of rules.patches) {
@@ -79,12 +82,7 @@ export function splits(data: CensusData, rules: Rules): Split[] {
       continue
     out.push({
       name: `patch-${patch.version}`,
-      side: (s) =>
-        compareToPoint(s.end, patch.start) < 0
-          ? 'A'
-          : compareToPoint(s.start, patch.start) >= 0
-            ? 'B'
-            : null,
+      side: (s) => (compareToPoint(s.start, patch.start) < 0 ? 'A' : 'B'),
     })
   }
   return out

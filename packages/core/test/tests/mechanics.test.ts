@@ -28,7 +28,7 @@ test('50/50 after k losses buckets 3 or more together', () => {
   )
 })
 
-test('consolidated rate is 5★ per pull over closed streaks', () => {
+test('consolidated rate is 1 / expected streak length from the hazard curve', () => {
   const m = mechanics(
     census([
       rec({ length: 60 }),
@@ -38,7 +38,29 @@ test('consolidated rate is 5★ per pull over closed streaks', () => {
     rules,
     'character-event',
   )
-  assert.equal(m.consolidated.rate, 2 / 100)
+  // Two streaks reach pull 40 and one ends there (h = 1/2); the last ends at 60 (h = 1). E[length] = 40 + 20 × 1/2.
+  assert.ok(Math.abs(m.consolidated.rate! - 1 / 50) < 1e-12)
   assert.equal(m.consolidated.disclosed, 0.016)
   assert.equal(m.softPity.length, 90)
+})
+
+test('the consolidated rate comes from the hazard curve, so short streaks are not over-counted', async () => {
+  const { softPityHazard } = await import('../../src/sim/simulate.ts')
+  const { cleanCharacterPool, simCensus, simConfig } = await import('../fixtures/sim.ts')
+  const h = softPityHazard(0.006, 74, 0.06, 90)
+  let survive = 1
+  let expectedLength = 0
+  for (let k = 1; k <= 90; k++) {
+    expectedLength += survive
+    survive *= 1 - h(k)
+  }
+  const m = mechanics(
+    simCensus(simConfig([{ ...cleanCharacterPool, pulls: [60, 120] }], 4000), 8),
+    rules,
+    'character-event',
+  )
+  assert.ok(
+    Math.abs(m.consolidated.rate! - 1 / expectedLength) < 0.0003,
+    `${m.consolidated.rate} vs ${1 / expectedLength}`,
+  )
 })

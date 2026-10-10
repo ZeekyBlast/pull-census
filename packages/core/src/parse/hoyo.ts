@@ -76,10 +76,11 @@ export function rowsToPulls(
       warnings.push(`unknown gacha_type ${r.gacha_type}`)
       continue
     }
-    const itemId = r.item_id !== '' ? r.item_id : dict[r.name]
+    let itemId = r.item_id !== '' ? r.item_id : dict[r.name]
     if (itemId === undefined) {
+      // Keep the pull: dropping it would merge two streaks. Its outcome becomes 'unknown'.
       warnings.push(`unknown item name: ${r.name}`)
-      continue
+      itemId = `unknown:${r.name}`
     }
     const time = isoWithOffset(r.time, timeZone)
     raw.push({

@@ -7,6 +7,7 @@ import {
   BETA_GATE,
   BOOTSTRAP_REPS,
   METHOD_VERSION,
+  SENSITIVITY_TRIM_PULLS,
   type Status,
   type TestResult,
 } from './definitions.ts'
@@ -69,21 +70,45 @@ export function onlyVerified(data: CensusData): CensusData {
     streaks: data.streaks.filter((s) => ok.has(s.accountId)),
     facts: data.facts.filter((f) => ok.has(f.accountId)),
     noFour: data.noFour.filter((r) => ok.has(r.accountId)),
-    unknownItems: data.unknownItems,
+    unknownItems: data.unknownItems.filter((u) => ok.has(u.accountId)),
   }
 }
 
-/** Selection-bias check: drop each account's most recent streak in each pool. */
-export function withoutLatest(data: CensusData): CensusData {
-  // Streaks are in pull order per account and pool, so the last one seen is the latest.
-  const latest = new Map<string, Streak>()
-  for (const s of data.streaks) latest.set(`${s.accountId}|${s.pool}`, s)
-  const drop = new Set(latest.values())
-  return { ...data, streaks: data.streaks.filter((s) => !drop.has(s)) }
+/**
+ * Selection-bias check: drop each account's last `trim` pulls in each pool. The cut ignores outcomes, so the
+ * streak crossing it becomes open (censored) instead of being dropped whole.
+ */
+export function withoutRecent(data: CensusData, trim = SENSITIVITY_TRIM_PULLS): CensusData {
+  const total = new Map<string, number>()
+  for (const s of data.streaks)
+    total.set(`${s.accountId}|${s.pool}`, (total.get(`${s.accountId}|${s.pool}`) ?? 0) + s.length)
+  const offset = new Map<string, number>()
+  const streaks: Streak[] = []
+  // Streaks are in pull order per account and pool.
+  for (const s of data.streaks) {
+    const key = `${s.accountId}|${s.pool}`
+    const at = offset.get(key) ?? 0
+    const cut = (total.get(key) ?? 0) - trim
+    offset.set(key, at + s.length)
+    if (at + s.length <= cut) streaks.push(s)
+    else if (at < cut) {
+      const length = cut - at
+      streaks.push({
+        ...s,
+        length,
+        censored: true,
+        outcome: null,
+        guaranteed: null,
+        lossesBefore: null,
+        multi: s.multi.slice(0, length),
+      })
+    }
+  }
+  return { ...data, streaks }
 }
 
 export type Disagreement = {
-  variant: 'all-tiers' | 'without-latest'
+  variant: 'all-tiers' | 'without-recent'
   id: string
   main: Status
   other: Status
@@ -95,7 +120,7 @@ export function runWithSensitivity(all: CensusData, rules: Rules, opts: { reps?:
   const main = runRelease(verified, rules, opts)
   const variants = [
     ['all-tiers', runRelease(all, rules, opts)],
-    ['without-latest', runRelease(withoutLatest(verified), rules, opts)],
+    ['without-recent', runRelease(withoutRecent(verified), rules, opts)],
   ] as const
   const status = new Map(main.results.map((r) => [r.id, r.status]))
   const disagreements: Disagreement[] = []

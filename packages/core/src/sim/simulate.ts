@@ -32,6 +32,8 @@ export type SimPool = {
   standard5: string[]
   /** Pulls per account in this pool: uniform in [min, max]. */
   pulls: [number, number]
+  /** Goal-directed player: stop right after owning this many featured 5★ (drawn uniformly), capped by `pulls`. */
+  untilFeatured?: [number, number]
 }
 
 export type SimConfig = {
@@ -62,8 +64,13 @@ export function simulate(cfg: SimConfig, seed: number): SimAccount[] {
       let k5 = 0
       let k4 = 0
       let guaranteed = false
+      // Only goal-directed pools draw a target, so other configs keep their exact random sequence.
+      const goal = sp.untilFeatured
+        ? sp.untilFeatured[0] + Math.floor(rand() * (sp.untilFeatured[1] - sp.untilFeatured[0] + 1))
+        : Number.POSITIVE_INFINITY
+      let owned = 0
       let done = 0
-      while (done < total) {
+      session: while (done < total) {
         const multi = rand() < cfg.multiShare && total - done >= 10
         const size = multi ? 10 : 1
         clock += 3_600_000 + Math.floor(rand() * 86_400_000)
@@ -80,6 +87,7 @@ export function simulate(cfg: SimConfig, seed: number): SimAccount[] {
             else if (guaranteed || rand() < sp.featuredRate) {
               itemId = pick(sp.featured5)
               guaranteed = false
+              owned++
             } else {
               itemId = pick(sp.standard5)
               guaranteed = sp.guaranteeAfterLoss
@@ -101,6 +109,7 @@ export function simulate(cfg: SimConfig, seed: number): SimAccount[] {
             sourceId: String(id++),
             multi,
           })
+          if (owned >= goal) break session
         }
         done += size
       }

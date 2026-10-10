@@ -59,7 +59,12 @@ test('the base rate counts pulls only up to the soft-pity window', () => {
 test('the featured rate pauses when the rules miss a 5★, and has no test without a featured 5★', () => {
   const data = census([rec()], {
     unknownItems: [
-      { pool: 'character-event', itemId: '19999999', time: '2026-09-01T12:00:00+08:00' },
+      {
+        accountId: 'a1',
+        pool: 'character-event',
+        itemId: '19999999',
+        time: '2026-09-01T12:00:00+08:00',
+      },
     ],
   })
   const r = featuredRate(data, rules, 'character-event', 100)!

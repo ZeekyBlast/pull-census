@@ -12,3 +12,6 @@ npm test            # unit, property and simulation tests
 npm run test:slow   # false-positive rate across many seeds
 npm run typecheck
 npm run lint
+```
+
+Licences: core MIT, apps AGPL-3.0, dataset CC BY 4.0.

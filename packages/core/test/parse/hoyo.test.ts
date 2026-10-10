@@ -53,14 +53,17 @@ test('rowsToPulls marks 10 rows sharing a timestamp as one 10-pull', () => {
   assert.equal(pulls.at(-1)!.multi, false)
 })
 
-test('rowsToPulls warns on unknown names and gacha types instead of guessing', () => {
+test('rowsToPulls keeps a pull with an unknown name (rarity is known) and warns; drops unknown gacha types', () => {
   const { pulls, warnings } = rowsToPulls(
-    [row({ name: 'Nobody' }), row({ gacha_type: '999' })],
+    [row({ name: 'Nobody', rank_type: '5' }), row({ gacha_type: '999' })],
     8,
     rules,
     dict,
   )
-  assert.equal(pulls.length, 0)
+  assert.deepEqual(
+    pulls.map((p) => [p.itemId, p.rarity]),
+    [['unknown:Nobody', 5]],
+  )
   assert.deepEqual(warnings, ['unknown item name: Nobody', 'unknown gacha_type 999'])
 })
 

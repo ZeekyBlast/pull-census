@@ -51,3 +51,27 @@ test('every census test is seeing too poor on a tiny census', () => {
   assert.ok(rs.length >= 14)
   assert.ok(rs.every((r) => r.status === 'seeing-too-poor' && r.kind === 'census'))
 })
+
+test('patch groups follow the streak start, so a streak spanning the patch counts as before it', () => {
+  const data = census([
+    rec({ start: '2025-03-01T12:00:00+08:00', end: '2025-04-30T12:00:00+08:00' }),
+  ])
+  const side = splits(data, rules).find((s) => s.name === 'patch-5.5')!.side
+  assert.equal(
+    side(rec({ start: '2025-03-20T12:00:00+08:00', end: '2025-03-30T12:00:00+08:00' })),
+    'A',
+  )
+  assert.equal(
+    side(rec({ start: '2025-03-27T12:00:00+08:00', end: '2025-03-30T12:00:00+08:00' })),
+    'B',
+  )
+})
+
+test('pull-volume groups streaks by the pulls made in the 90 days before each one starts', () => {
+  // Listed busiest first, so input order can't fake the answer.
+  const streaks = Array.from({ length: 10 }, (_, i) =>
+    rec({ accountId: `a${i}`, recentPulls: (9 - i) * 10 }),
+  )
+  const side = splits(census(streaks), rules).find((s) => s.name === 'pull-volume')!.side
+  assert.deepEqual(streaks.map(side), ['A', 'A', null, null, null, null, null, null, 'B', 'B'])
+})

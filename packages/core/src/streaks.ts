@@ -1,5 +1,6 @@
-import { isFeatured, poolRules, regionForUid } from './rules/load.ts'
+import { hasPhase, isFeatured, poolRules, regionForUid } from './rules/load.ts'
 import type { Rules } from './rules/schema.ts'
+import { RECENT_VOLUME_DAYS } from './tests/definitions.ts'
 import type { CensusData, NoFourRun, Outcome, Pull, Streak } from './types.ts'
 
 const DAY_MS = 86_400_000
@@ -17,9 +18,25 @@ function gapsBefore(pulls: Pull[]): Map<string, number | null> {
   return gaps
 }
 
+/** Pulls (any pool) strictly before `ms` and within RECENT_VOLUME_DAYS of it. `sorted` is ascending epoch ms. */
+function recentCount(sorted: number[], ms: number): number {
+  const lowerBound = (x: number) => {
+    let lo = 0
+    let hi = sorted.length
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1
+      if ((sorted[mid] as number) < x) lo = mid + 1
+      else hi = mid
+    }
+    return lo
+  }
+  return lowerBound(ms) - lowerBound(ms - RECENT_VOLUME_DAYS * DAY_MS)
+}
+
 /** Split one account's pulls (sorted oldest first) into streaks, with guarantee state and 50/50 outcomes. */
 export function deriveStreaks(pulls: Pull[], rules: Rules, account: Account): CensusData {
   const gaps = gapsBefore(pulls)
+  const sortedMs = pulls.map((p) => Date.parse(p.time)).sort((a, b) => a - b)
   const streaks: Streak[] = []
   const noFour: NoFourRun[] = []
   const unknownItems: CensusData['unknownItems'] = []
@@ -52,6 +69,7 @@ export function deriveStreaks(pulls: Pull[], rules: Rules, account: Account): Ce
         outcome,
         lossesBefore: hasFeatured && !censored ? losses : null,
         verified: account.verified,
+        recentPulls: recentCount(sortedMs, Date.parse(head.time)),
       })
     }
 
@@ -66,13 +84,17 @@ export function deriveStreaks(pulls: Pull[], rules: Rules, account: Account): Ce
       if (hasFeatured) {
         const f = isFeatured(rules, pool, p.bannerId, p.time, p.itemId)
         outcome = f === true ? 'featured' : f === false ? 'standard' : 'unknown'
-        if (outcome === 'unknown') unknownItems.push({ pool, itemId: p.itemId, time: p.time })
+        // Outside the schedule's coverage is unknown too, but only a gap inside it means the rules need an update.
+        if (outcome === 'unknown' && hasPhase(rules, pool, p.bannerId, p.time)) {
+          unknownItems.push({ accountId: account.accountId, pool, itemId: p.itemId, time: p.time })
+        }
       }
       close(false, outcome)
 
       if (outcome === 'featured') {
         if (guaranteed === false) losses = 0 // a won 50/50
-        guaranteed = false // after any featured 5★ the next is a 50/50
+        // After a featured 5★ the next is a 50/50, unless a chart course may have made it guaranteed.
+        guaranteed = pr.chartPath ? null : false
       } else if (outcome === 'standard') {
         if (guaranteed === false) losses = losses === null ? null : losses + 1
         guaranteed = pr.guaranteeAfterLoss
@@ -87,8 +109,6 @@ export function deriveStreaks(pulls: Pull[], rules: Rules, account: Account): Ce
     noFour.push({ accountId: account.accountId, pool, longest: longest4 })
   }
 
-  const times = pulls.map((p) => Date.parse(p.time))
-  const spanDays = times.length ? (Math.max(...times) - Math.min(...times)) / DAY_MS : 0
   return {
     streaks,
     noFour,
@@ -98,7 +118,6 @@ export function deriveStreaks(pulls: Pull[], rules: Rules, account: Account): Ce
         accountId: account.accountId,
         region: regionForUid(rules, account.uid),
         uidCoarse: Math.floor(Number(account.uid) / 1e6),
-        pullsPer30d: pulls.length / (Math.max(spanDays, 30) / 30),
         verified: account.verified,
       },
     ],

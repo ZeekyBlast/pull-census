@@ -7,8 +7,8 @@ import { fixtureRules as rules } from '../fixtures/rules.ts'
 import { cleanCharacterPool, cleanStandardPool, simCensus, simConfig } from '../fixtures/sim.ts'
 
 const REPS = 200
-const differs = (pools: Parameters<typeof simConfig>[0], multiShare = 0.6) =>
-  runRelease(simCensus(simConfig(pools, 4000, multiShare), 1), rules, { reps: REPS })
+const differs = (pools: Parameters<typeof simConfig>[0], multiShare = 0.6, accounts = 4000) =>
+  runRelease(simCensus(simConfig(pools, accounts, multiShare), 1), rules, { reps: REPS })
     .results.filter((r) => r.status === 'differs')
     .map((r) => r.id)
 
@@ -39,4 +39,19 @@ test('a lower base rate inside 10-pulls is caught by the singles-vs-multi Census
     0.1,
   )
   assert.ok(ids.includes('census:singles-vs-multi:base-rate:character-event'), ids.join())
+})
+
+test('a clean census with a patch inside its span flags nothing', () => {
+  // Long histories put the fixture's 5.5 patch mid-span, where splitting on streak ends was biased.
+  assert.deepEqual(differs([{ ...cleanCharacterPool, pulls: [800, 1200] }], 0.6, 2000), [])
+})
+
+test('goal-directed players (pull until they own 2–6 featured) do not make pull volume differ', () => {
+  const goal = {
+    ...cleanCharacterPool,
+    pulls: [1, 3000] as [number, number],
+    untilFeatured: [2, 6] as [number, number],
+  }
+  const ids = differs([goal])
+  assert.ok(!ids.some((id) => id.startsWith('census:pull-volume')), ids.join())
 })

@@ -35,3 +35,16 @@ test('the simulated base rate lands near 0.6%', () => {
   }
   assert.ok(Math.abs(events / pulls - 0.006) < 0.001, `${events / pulls}`)
 })
+
+test('a goal-directed player stops right after their last wanted featured 5★', () => {
+  const pool = {
+    ...cleanCharacterPool,
+    pulls: [1, 5000] as [number, number],
+    untilFeatured: [2, 2] as [number, number],
+  }
+  for (const acc of simulate(simConfig([pool], 30), 4)) {
+    const fives = acc.pulls.filter((p) => p.rarity === 5 && p.itemId === pool.featured5[0])
+    assert.equal(fives.length, 2)
+    assert.equal(acc.pulls.at(-1)!.itemId, pool.featured5[0])
+  }
+})

@@ -23,6 +23,9 @@ test('methods/v1.md states every frozen value', () => {
     `1–${d.BASE_RATE_LAST['weapon-event']} for the weapon pool`,
     `${d.RETURNING_GAP_DAYS} or more days`,
     `${fmt(d.BETA_GATE.streaks)} complete verified`,
+    `${d.RECENT_VOLUME_DAYS} days before the streak starts`,
+    `last ${d.SENSITIVITY_TRIM_PULLS} pulls`,
+    'Epitomized Path',
   ]
   for (const s of must) assert.ok(doc.includes(s), `methods/v1.md is missing "${s}"`)
 })

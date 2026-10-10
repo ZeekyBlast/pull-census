@@ -22,6 +22,7 @@ const streak = (length: number, censored = false): Streak => ({
   outcome: null,
   lossesBefore: null,
   verified: true,
+  recentPulls: 0,
 })
 
 test('mulberry32 is deterministic and in [0, 1)', () => {

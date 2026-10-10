@@ -15,6 +15,7 @@ export const rec = (over: Partial<Streak> = {}): Streak => ({
   outcome: 'featured',
   lossesBefore: 0,
   verified: true,
+  recentPulls: 0,
   ...over,
 })
 
@@ -24,7 +25,7 @@ export const census = (streaks: Streak[], over: Partial<CensusData> = {}): Censu
     accountId,
     region: 'asia',
     uidCoarse: 812,
-    pullsPer30d: 100,
+
     verified: streaks.find((s) => s.accountId === accountId)!.verified,
   })),
   noFour: [],

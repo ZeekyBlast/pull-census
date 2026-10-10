@@ -25,6 +25,7 @@ const pool = (
   featuredRate: featured === null ? null : s(featured),
   catchUp: null,
   guaranteeAfterLoss: featured !== null,
+  chartPath: null,
   source,
   ...extra,
 })
@@ -47,7 +48,7 @@ export const fixtureRules = loadRules({
   game: 'genshin',
   pools: {
     'character-event': pool(['301', '400'], 90, 0.006, 0.5, { catchUp: s('capturing-radiance') }),
-    'weapon-event': pool(['302'], 80, 0.007, 0.75),
+    'weapon-event': pool(['302'], 80, 0.007, 0.75, { chartPath: s(1) }),
     standard: pool(['200'], 90, 0.006, null),
     beginner: { ...pool(['100'], 90, 0.006, null), inCensus: false },
     chronicled: pool(['500'], 90, 0.006, null),

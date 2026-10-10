@@ -232,7 +232,7 @@ Computed in the browser from `core/report`. Each item below is per pool unless i
 Each test compares the base-rate hazard (pulls 1–73) and the 50/50 win rate between groups:
 - singles vs 10-pulls (the `multi` flag)
 - account age: the lowest vs highest quintile of `uidCoarse`, within each region
-- pull volume: the top vs bottom quintile of pulls per 30 days
+- pull volume: the top vs bottom quintile of the account's pulls in the 90 days before each streak starts (whole-history volume depends on luck)
 - returning players: streaks that start after a gap of 60+ days with no pulls, vs all other streaks
 - region: the four regions
 - before vs after each patch date in the registry
@@ -248,7 +248,7 @@ Each test compares the base-rate hazard (pulls 1–73) and the 50/50 win rate be
 - **Minimum n:** set per test for 80% power at α = 0.001. The minimum effects to detect are ±25% relative on the base rate and ±5 points on the 50/50. Census Tests use the same thresholds. Below the minimum, the page shows "Seeing too poor: n of needed".
 - **Selection bias:**
   - Imports are whole-history only.
-  - A sensitivity rerun excludes each account's most recent streak.
+  - A sensitivity rerun drops each account's last 90 pulls in each pool; the streak crossing that cut counts as still open.
   - The verified-only result must agree with the full-pool result, or the page says it doesn't.
   - The methods page publishes the census's own sample statistics.
 

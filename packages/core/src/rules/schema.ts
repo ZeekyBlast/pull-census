@@ -32,6 +32,8 @@ export const PoolRules = v.object({
   /** A disclosed catch-up mechanic (e.g. Capturing Radiance). Makes the featured-rate test one-sided. */
   catchUp: v.nullable(sourced(v.string())),
   guaranteeAfterLoss: v.boolean(),
+  /** A chart course with Fate Points (Epitomized Path): the state after a featured 5★ can't be known from history. */
+  chartPath: v.nullable(sourced(PositiveInt)),
   source: Source,
 })
 

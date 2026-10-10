@@ -17,14 +17,8 @@ export type Mechanics = {
     lo: number
     hi: number
   }[]
-  consolidated: {
-    fiveStars: number
-    pulls: number
-    rate: number | null
-    lo: number
-    hi: number
-    disclosed: number
-  }
+  /** 5★ per pull in the long run: 1 / expected streak length, from the hazard curve (uses open streaks too). */
+  consolidated: { rate: number | null; disclosed: number }
 }
 
 export function mechanics(data: CensusData, rules: Rules, pool: string): Mechanics {
@@ -40,21 +34,22 @@ export function mechanics(data: CensusData, rules: Rules, pool: string): Mechani
     if (s.outcome === 'featured') bucket.wins++
   }
 
-  const closed = streaks.filter((s) => !s.censored)
-  const pulls = closed.reduce((a, s) => a + s.length, 0)
-  const [lo, hi] = clopperPearson(closed.length, pulls, 0.95)
+  const softPity = hazardCurve(streaks, pr.hardPity5.value, 0.95)
+  // Closed streaks alone over-count short ones; the survival curve doesn't.
+  let survive = 1
+  let expectedLength = 0
+  for (const p of softPity) {
+    expectedLength += survive
+    survive *= 1 - p.h
+  }
   return {
-    softPity: hazardCurve(streaks, pr.hardPity5.value, 0.95),
+    softPity,
     fiftyFiftyAfterLosses: byK.map((b, k) => {
       const [l, h] = clopperPearson(b.wins, b.n, 0.95)
       return { k, n: b.n, wins: b.wins, rate: b.n ? b.wins / b.n : null, lo: l, hi: h }
     }),
     consolidated: {
-      fiveStars: closed.length,
-      pulls,
-      rate: pulls ? closed.length / pulls : null,
-      lo,
-      hi,
+      rate: softPity[0]?.atRisk ? 1 / expectedLength : null,
       disclosed: pr.consolidated5.value,
     },
   }
