@@ -26,6 +26,7 @@ test('methods/v1.md states every frozen value', () => {
     `${d.RECENT_VOLUME_DAYS} days before the streak starts`,
     `last ${d.SENSITIVITY_TRIM_PULLS} pulls`,
     'Epitomized Path',
+    'right after a won 50/50',
   ]
   for (const s of must) assert.ok(doc.includes(s), `methods/v1.md is missing "${s}"`)
 })

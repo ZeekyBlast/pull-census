@@ -113,3 +113,23 @@ test('the patch split compares instants, not ISO strings with different offsets'
 test('a pool without a base-rate window throws instead of silently having no Census Tests', () => {
   assert.throws(() => censusTests(census([rec()]), rules, 'beginner', 50), /no base-rate window/)
 })
+
+test('50/50 Census Tests count only 50/50s after a won 50/50, so the catch-up counter is level in both groups', () => {
+  // Even i: a 50/50 after a win (lossesBefore 0); odd i: after a loss. Every third streak ends in a 10-pull.
+  const streaks = Array.from({ length: 7000 }, (_, i) =>
+    rec({
+      accountId: `a${i % 4000}`,
+      lossesBefore: i % 2,
+      outcome: i % 4 < 2 ? 'featured' : 'standard',
+      multi: Array.from({ length: 60 }, () => i % 3 === 0),
+    }),
+  )
+  const flips = (data: typeof streaks) =>
+    censusTests(census(data), rules, 'character-event', 50).find(
+      (t) => t.id === 'census:singles-vs-multi:fifty-fifty:character-event',
+    )!.n
+  // n is the smaller group: 10-pull flips after a win are i ≡ 0 (mod 6), 1167 of them.
+  assert.equal(flips(streaks), 1167)
+  // Counting every flip would give the 10-pull group all 2334 streaks with i ≡ 0 (mod 3).
+  assert.equal(flips(streaks.map((s) => ({ ...s, lossesBefore: 0 }))), 2334)
+})

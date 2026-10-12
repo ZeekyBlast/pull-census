@@ -149,8 +149,15 @@ export function censusTests(
     if (!s.censored && s.length <= last && g) row[g === 'A' ? 0 : 2]! += 1
     return row
   }
+  // Only 50/50s right after a won 50/50: a catch-up mechanic (Capturing Radiance) raises the win rate with each
+  // loss in a row, so groups with different loss streaks would differ on fair data.
   const flipRow = (s: Streak, g: 'A' | 'B' | null) => {
-    if (!g || s.guaranteed !== false || (s.outcome !== 'featured' && s.outcome !== 'standard'))
+    if (
+      !g ||
+      s.guaranteed !== false ||
+      s.lossesBefore !== 0 ||
+      (s.outcome !== 'featured' && s.outcome !== 'standard')
+    )
       return [0, 0, 0, 0]
     const win = s.outcome === 'featured' ? 1 : 0
     return g === 'A' ? [win, 1, 0, 0] : [0, 0, win, 1]
