@@ -1,4 +1,6 @@
 export * from './ids.ts'
+export * from './import/cache.ts'
+export * from './import/history.ts'
 export * from './parse/finalize.ts'
 export * from './parse/hoyo.ts'
 export * from './parse/uigf.ts'

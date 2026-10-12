@@ -20,7 +20,8 @@ export class HoyoApiError extends Error {
   }
 }
 
-const Row = v.object({
+/** One getGachaLog row, as the API sends it. */
+export const HoyoRowSchema = v.object({
   uid: v.pipe(v.string(), v.regex(/^\d+$/)),
   gacha_type: v.string(),
   item_id: v.string(),
@@ -30,14 +31,14 @@ const Row = v.object({
   rank_type: v.picklist(['3', '4', '5']),
   id: v.pipe(v.string(), v.regex(/^\d{1,19}$/)),
 })
-export type HoyoRow = v.InferOutput<typeof Row>
+export type HoyoRow = v.InferOutput<typeof HoyoRowSchema>
 
 const Page = v.object({
   retcode: v.number(),
   message: v.string(),
   data: v.nullable(
     v.object({
-      list: v.array(Row),
+      list: v.array(HoyoRowSchema),
       region_time_zone: v.optional(v.pipe(v.number(), v.integer())),
     }),
   ),
