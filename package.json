@@ -3,15 +3,16 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "engines": {
     "node": ">=26.11"
   },
   "scripts": {
-    "test": "node --test \"packages/*/test/**/*.test.ts\" \"scripts/*.test.ts\"",
+    "test": "node --test \"packages/*/test/**/*.test.ts\" \"apps/*/test/**/*.test.ts\" \"scripts/*.test.ts\"",
     "test:slow": "SLOW=1 node --test \"packages/core/test/sim/*.slow.test.ts\"",
-    "typecheck": "tsc -p packages/core --noEmit",
+    "typecheck": "tsc -p packages/core --noEmit && tsc -p apps/api --noEmit",
     "lint": "biome check .",
     "calibrate": "node scripts/calibrate.ts"
   },
