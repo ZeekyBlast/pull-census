@@ -4,10 +4,9 @@ import type { Rules } from '../rules/schema.ts'
 import { minNTwoSample } from '../stats/power.ts'
 import { normCdf } from '../stats/special.ts'
 import type { AccountFacts, CensusData, Streak } from '../types.ts'
-import { base, byAccount, hasUnknown, interval, usable } from './common.ts'
+import { base, baseRateLast, byAccount, byText, hasUnknown, interval, usable } from './common.ts'
 import {
   ALPHA,
-  BASE_RATE_LAST,
   BASE_RATE_MDE,
   FIFTY_FIFTY_MDE,
   POWER,
@@ -21,7 +20,7 @@ type Split = { name: string; side: (s: Streak) => 'A' | 'B' | null }
 
 /** Accounts in the lowest (0) to highest (4) quintile of a value. */
 function quintiles(facts: AccountFacts[], value: (f: AccountFacts) => number): Map<string, number> {
-  const sorted = [...facts].sort((a, b) => value(a) - value(b))
+  const sorted = [...facts].sort((a, b) => value(a) - value(b) || byText(a.accountId, b.accountId))
   return new Map(sorted.map((f, i) => [f.accountId, Math.floor((i * 5) / sorted.length)]))
 }
 
@@ -44,7 +43,13 @@ export function splits(data: CensusData, rules: Rules): Split[] {
   })
 
   // Volume before each streak, never over the whole history: unlucky players pull more to reach a goal.
-  const byVolume = [...data.streaks].sort((a, b) => a.recentPulls - b.recentPulls)
+  const byVolume = [...data.streaks].sort(
+    (a, b) =>
+      a.recentPulls - b.recentPulls ||
+      byText(a.accountId, b.accountId) ||
+      byText(a.pool, b.pool) ||
+      Date.parse(a.start) - Date.parse(b.start),
+  )
   const volume = new Map(byVolume.map((s, i) => [s, Math.floor((i * 5) / byVolume.length)]))
   out.push({
     name: 'pull-volume',
@@ -68,16 +73,11 @@ export function splits(data: CensusData, rules: Rules): Split[] {
 
   // Patches inside the data's time span. A streak belongs to the side it starts on: its end depends on its
   // outcome, so splitting on ends (or dropping spanning streaks) would favour short streaks before the patch.
-  const starts = data.streaks.map((s) => s.start).sort()
-  const ends = data.streaks.map((s) => s.end).sort()
   for (const patch of rules.patches) {
-    const first = starts[0]
-    const last = ends.at(-1)
+    // Compare instants: times from different servers carry different offsets, so ISO strings don't sort.
     if (
-      !first ||
-      !last ||
-      compareToPoint(first, patch.start) >= 0 ||
-      compareToPoint(last, patch.start) < 0
+      !data.streaks.some((s) => compareToPoint(s.start, patch.start) < 0) ||
+      !data.streaks.some((s) => compareToPoint(s.end, patch.start) >= 0)
     )
       continue
     out.push({
@@ -131,8 +131,7 @@ export function censusTests(
   reps: number,
 ): TestResult[] {
   const pr = poolRules(rules, pool)
-  const last = BASE_RATE_LAST[pool]
-  if (last === undefined) return []
+  const last = baseRateLast(pool)
   const p0 = pr.base5.value
   const neededRate = minNTwoSample(p0, p0 * (1 + BASE_RATE_MDE), ALPHA, POWER)
   const neededFlip = minNTwoSample(0.5, 0.5 + FIFTY_FIFTY_MDE, ALPHA, POWER)

@@ -38,7 +38,13 @@ export function mechanics(data: CensusData, rules: Rules, pool: string): Mechani
   // Closed streaks alone over-count short ones; the survival curve doesn't.
   let survive = 1
   let expectedLength = 0
+  let dry = false
   for (const p of softPity) {
+    if (p.h === null) {
+      // No streak left to watch: the rest is unknown unless every streak has already ended.
+      dry = survive > 0
+      break
+    }
     expectedLength += survive
     survive *= 1 - p.h
   }
@@ -49,7 +55,7 @@ export function mechanics(data: CensusData, rules: Rules, pool: string): Mechani
       return { k, n: b.n, wins: b.wins, rate: b.n ? b.wins / b.n : null, lo: l, hi: h }
     }),
     consolidated: {
-      rate: softPity[0]?.atRisk ? 1 / expectedLength : null,
+      rate: dry ? null : 1 / expectedLength,
       disclosed: pr.consolidated5.value,
     },
   }

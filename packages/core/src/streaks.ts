@@ -1,3 +1,4 @@
+import { compareIds } from './ids.ts'
 import { hasPhase, isFeatured, poolRules, regionForUid } from './rules/load.ts'
 import type { Rules } from './rules/schema.ts'
 import { RECENT_VOLUME_DAYS } from './tests/definitions.ts'
@@ -33,8 +34,9 @@ function recentCount(sorted: number[], ms: number): number {
   return lowerBound(ms) - lowerBound(ms - RECENT_VOLUME_DAYS * DAY_MS)
 }
 
-/** Split one account's pulls (sorted oldest first) into streaks, with guarantee state and 50/50 outcomes. */
-export function deriveStreaks(pulls: Pull[], rules: Rules, account: Account): CensusData {
+/** Split one account's pulls (any order) into streaks, with guarantee state and 50/50 outcomes. */
+export function deriveStreaks(input: Pull[], rules: Rules, account: Account): CensusData {
+  const pulls = [...input].sort((a, b) => compareIds(a.sourceId, b.sourceId))
   const gaps = gapsBefore(pulls)
   const sortedMs = pulls.map((p) => Date.parse(p.time)).sort((a, b) => a - b)
   const streaks: Streak[] = []

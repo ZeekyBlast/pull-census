@@ -114,7 +114,12 @@ export type Disagreement = {
   other: Status
 }
 
-/** The main release (verified only) plus the two sensitivity reruns; lists every test whose status moves. */
+const settled = (s: Status) => s === 'consistent' || s === 'differs' || s === 'no-difference'
+
+/**
+ * The main release (verified only) plus the two sensitivity reruns; lists every test that reaches a result in
+ * both runs and the results differ. A rerun that is only seeing too poor lacks data, it doesn't disagree.
+ */
 export function runWithSensitivity(all: CensusData, rules: Rules, opts: { reps?: number } = {}) {
   const verified = onlyVerified(all)
   const main = runRelease(verified, rules, opts)
@@ -127,7 +132,8 @@ export function runWithSensitivity(all: CensusData, rules: Rules, opts: { reps?:
   for (const [variant, rel] of variants) {
     for (const r of rel.results) {
       const m = status.get(r.id)
-      if (m && m !== r.status) disagreements.push({ variant, id: r.id, main: m, other: r.status })
+      if (m && settled(m) && settled(r.status) && m !== r.status)
+        disagreements.push({ variant, id: r.id, main: m, other: r.status })
     }
   }
   return { main, disagreements }

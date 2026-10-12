@@ -82,3 +82,12 @@ test('withoutRecent drops the last 90 pulls per account and pool; the streak cro
   )
   assert.equal(trimmed.streaks[1]!.multi.length, 30)
 })
+
+test('a rerun that only lacks data is not a disagreement', () => {
+  // Trimming the last 90 pulls removes the only streak: hard pity goes from consistent to seeing too poor.
+  const { main, disagreements } = runWithSensitivity(census([rec({ length: 60 })]), rules, {
+    reps: 50,
+  })
+  assert.equal(main.results.find((r) => r.id === 'hard-pity:character-event')!.status, 'consistent')
+  assert.deepEqual(disagreements, [])
+})

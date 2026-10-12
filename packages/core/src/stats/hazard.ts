@@ -5,7 +5,8 @@ export type HazardPoint = {
   k: number
   atRisk: number
   events: number
-  h: number
+  /** null where no streak is at risk. */
+  h: number | null
   lo: number
   hi: number
 }
@@ -26,7 +27,7 @@ export function hazardCurve(streaks: Streak[], maxK: number, level = 0.95): Haza
   for (let k = 1; k <= maxK; k++) {
     const events = ended[k]!
     const [lo, hi] = clopperPearson(events, atRisk, level)
-    out.push({ k, atRisk, events, h: atRisk ? events / atRisk : 0, lo, hi })
+    out.push({ k, atRisk, events, h: atRisk ? events / atRisk : null, lo, hi })
     atRisk -= reached[k]!
   }
   return out

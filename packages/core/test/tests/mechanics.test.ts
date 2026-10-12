@@ -64,3 +64,12 @@ test('the consolidated rate comes from the hazard curve, so short streaks are no
     `${m.consolidated.rate} vs ${1 / expectedLength}`,
   )
 })
+
+test('the consolidated rate is unknown when the data runs out before every streak could end', () => {
+  const m = mechanics(
+    census([rec({ length: 50, censored: true, outcome: null })]),
+    rules,
+    'character-event',
+  )
+  assert.equal(m.consolidated.rate, null)
+})

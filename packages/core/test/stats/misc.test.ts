@@ -92,3 +92,11 @@ test('minimum n matches the scipy-computed values for the pre-registered effects
   assert.equal(minNTwoSample(0.006, 0.0075, 0.001, 0.8), 101755)
   assert.equal(minNTwoSample(0.5, 0.55, 0.001, 0.8), 3405)
 })
+
+test('hazardCurve has no hazard where no streak is at risk', () => {
+  const h = hazardCurve([streak(1)], 3)
+  assert.deepEqual(
+    h.map((p) => p.h),
+    [1, null, null],
+  )
+})

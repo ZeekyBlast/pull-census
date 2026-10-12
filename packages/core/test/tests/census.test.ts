@@ -75,3 +75,41 @@ test('pull-volume groups streaks by the pulls made in the 90 days before each on
   const side = splits(census(streaks), rules).find((s) => s.name === 'pull-volume')!.side
   assert.deepEqual(streaks.map(side), ['A', 'A', null, null, null, null, null, null, 'B', 'B'])
 })
+
+test('census results do not depend on the order of streaks or accounts, ties included', () => {
+  // uidCoarse is the same for every account and recentPulls repeats: quintile edges cut through ties.
+  // Big enough that the account-age and pull-volume tests reach a result; one account in three always loses.
+  const streaks = Array.from({ length: 30_000 }, (_, i) => {
+    const length = 30 + (i % 7)
+    return rec({
+      accountId: `a${i % 3000}`,
+      length,
+      multi: Array.from({ length }, (_, k) => k >= 5),
+      outcome: i % 3 === 0 ? 'standard' : 'featured',
+      recentPulls: i % 13,
+    })
+  })
+  const forward = censusTests(census(streaks), rules, 'character-event', 50)
+  for (const name of ['account-age', 'pull-volume'])
+    assert.equal(
+      forward.find((r) => r.id === `census:${name}:base-rate:character-event`)!.status,
+      'pending',
+    )
+  assert.deepEqual(
+    censusTests(census([...streaks].reverse()), rules, 'character-event', 50),
+    forward,
+  )
+})
+
+test('the patch split compares instants, not ISO strings with different offsets', () => {
+  // Patch 5.5 starts 2025-03-25T22:00Z. The +08:00 streak is before it; the -05:00 one is after.
+  const data = census([
+    rec({ start: '2025-03-26T05:00:00+08:00', end: '2025-03-26T05:30:00+08:00' }),
+    rec({ start: '2025-03-26T00:00:00-05:00', end: '2025-03-26T01:00:00-05:00' }),
+  ])
+  assert.ok(splits(data, rules).some((s) => s.name === 'patch-5.5'))
+})
+
+test('a pool without a base-rate window throws instead of silently having no Census Tests', () => {
+  assert.throws(() => censusTests(census([rec()]), rules, 'beginner', 50), /no base-rate window/)
+})

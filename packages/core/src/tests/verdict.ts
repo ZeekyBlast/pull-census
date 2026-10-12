@@ -6,10 +6,9 @@ import { binomCdf, binomTwoSidedP } from '../stats/binom.ts'
 import { exposure } from '../stats/hazard.ts'
 import { minNOneSample } from '../stats/power.ts'
 import type { CensusData } from '../types.ts'
-import { base, byAccount, hasUnknown, interval, usable } from './common.ts'
+import { base, baseRateLast, byAccount, hasUnknown, interval, usable } from './common.ts'
 import {
   ALPHA,
-  BASE_RATE_LAST,
   BASE_RATE_MDE,
   FIFTY_FIFTY_MDE,
   FLOOR_POSITIONS,
@@ -55,8 +54,7 @@ export function baseRate(data: CensusData, rules: Rules, pool: string, reps: num
     minNOneSample(p0, p0 * (1 + BASE_RATE_MDE), ALPHA, POWER, 2),
     minNOneSample(p0, p0 * (1 - BASE_RATE_MDE), ALPHA, POWER, 2),
   )
-  const last = BASE_RATE_LAST[pool]
-  if (last === undefined) throw new Error(`no base-rate window for pool ${pool}`)
+  const last = baseRateLast(pool)
   return rateTest(
     `base-rate:${pool}`,
     data,

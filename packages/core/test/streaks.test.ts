@@ -167,3 +167,11 @@ test('a 5★ outside the schedule is unknown but not a registry gap; gaps name t
     { accountId: 'a1', pool: 'character-event', itemId: '19999999', time: data.streaks[1]!.end },
   ])
 })
+
+test('deriveStreaks sorts by pull id itself, so input order never changes the streaks', () => {
+  const pulls = mkPulls('character-event', [...streakOf(9, F), ...streakOf(20, S), 3, 3])
+  assert.deepEqual(
+    deriveStreaks([...pulls].reverse(), rules, acc),
+    deriveStreaks(pulls, rules, acc),
+  )
+})

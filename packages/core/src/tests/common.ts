@@ -1,13 +1,29 @@
 import { clusterBootstrap } from '../stats/bootstrap.ts'
 import { seedFor } from '../stats/prng.ts'
 import type { CensusData, Streak } from '../types.ts'
-import { BOOTSTRAP_LEVEL, METHOD_SEED, METHOD_VERSION, type TestResult } from './definitions.ts'
+import {
+  BASE_RATE_LAST,
+  BOOTSTRAP_LEVEL,
+  METHOD_SEED,
+  METHOD_VERSION,
+  type TestResult,
+} from './definitions.ts'
+
+/** Plain string order, for tie-breaks that must not depend on input order. */
+export const byText = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0)
+
+/** Last pull of the base-rate window for a pool. */
+export function baseRateLast(pool: string): number {
+  const last = BASE_RATE_LAST[pool]
+  if (last === undefined) throw new Error(`no base-rate window for pool ${pool}`)
+  return last
+}
 
 /** Streaks the census uses: known starting pity, in this pool. */
 export const usable = (data: CensusData, pool: string): Streak[] =>
   data.streaks.filter((s) => s.pool === pool && !s.leftTruncated)
 
-/** Sum per-account rows so the bootstrap resamples accounts, not pulls. */
+/** Sum per-account rows so the bootstrap resamples accounts, not pulls. Sorted by account, so draws never depend on input order. */
 export function byAccount<T>(
   items: T[],
   account: (t: T) => string,
@@ -23,7 +39,7 @@ export function byAccount<T>(
     })
     map.set(key, acc)
   }
-  return [...map.values()]
+  return [...map.entries()].sort(([a], [b]) => byText(a, b)).map(([, v]) => v)
 }
 
 export const interval = (
